@@ -9,6 +9,10 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 import requests
 
+
+assert os.path.exists("credentials_temp.json"), "Missing credentials_temp.json"
+assert os.path.exists("token_temp.json"), "Missing token_temp.json"
+
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 
