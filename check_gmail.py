@@ -10,20 +10,15 @@ from googleapiclient.discovery import build
 import requests
 
 
-assert os.path.exists("credentials_temp.json"), "Missing credentials_temp.json"
-assert os.path.exists("token_temp.json"), "Missing token_temp.json"
+#assert os.path.exists("credentials_temp.json"), "Missing credentials_temp.json"
+#assert os.path.exists("token_temp.json"), "Missing token_temp.json"
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 
 # Load credentials/token from environment secrets
-#creds_data = os.environ.get("GMAIL_CREDENTIALS")
-#token_data = os.environ.get("GMAIL_TOKEN_JSON")
-with open("credentials_temp.json", "r") as f:
-    creds_data = f.read()
-
-with open("token_temp.json", "r") as f:
-    token_data = f.read()
+creds_data = os.environ.get("GMAIL_CREDENTIALS")
+token_data = os.environ.get("GMAIL_TOKEN_JSON")
 
 if not creds_data or not token_data:
     logging.error("Missing Gmail API credentials or token in environment.")
