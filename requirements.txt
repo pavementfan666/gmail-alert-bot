@@ -1,5 +1,4 @@
+google-auth==2.28.1
+google-auth-oauthlib==1.2.0
+google-api-python-client==2.110.0
 pytz
-google-api-python-client
-google-auth
-google-auth-oauthlib
-requests
