@@ -118,7 +118,7 @@ def main():
         return
 
     for msg in messages:
-        alert_msg = f"📬 New Email:\nFrom: {msg['from']}\nSubject: {msg['subject']}\nReceived: {msg['received_at']}"
+        alert_msg = f"🧑‍🌾📬 Ranch Mail:\nFrom: {msg['from']}\nSubject: {msg['subject']}\nReceived: {msg['received_at']}"
         send_telegram_alert(alert_msg)
 
 if __name__ == "__main__":
