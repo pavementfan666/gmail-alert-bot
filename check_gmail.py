@@ -64,7 +64,7 @@ def get_recent_emails():
 
     print(f"Querying emails received between:\n  {two_hours_ago_utc} (timestamp: {after_ts})\n  {now_utc} (timestamp: {before_ts})")
 
-    allowed_senders = ['dominicchavarria@icloud.com', 'redlabfungi@gmail.com']
+    allowed_senders = ['automated@airbnb.com', 'express@airbnb.com', 'hello@send.hipcamp.com', 'no-reply@glampinghub.com', 'support@glampinghub.com', 'sender@messages.homeaway.com', 'dominicchavarria@icloud.com']
     query = f"after:{after_ts} before:{before_ts} ({' OR '.join([f'from:{addr}' for addr in allowed_senders])})"
     #query = f"after:{after_ts} before:{before_ts}"
     results = service.users().messages().list(userId='me', q=query).execute()
