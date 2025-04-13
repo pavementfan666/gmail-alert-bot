@@ -22,15 +22,15 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Write credentials_temp.json
+        run: echo "${{ secrets.GMAIL_CREDENTIALS_JSON }}" > credentials_temp.json
+
+      - name: Write token_temp.json
+        run: echo "${{ secrets.GMAIL_TOKEN_JSON }}" > token_temp.json
+
       - name: Run Gmail notifier
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           python main.py
-
-      - name: Write credentials_temp.json
-        run: echo "${{ secrets.GMAIL_CREDENTIALS_JSON }}" > credentials_temp.json
-
-      - name: Write token_temp.json
-        run: echo "${{ secrets.GMAIL_TOKEN_JSON }}" > token_temp.json
