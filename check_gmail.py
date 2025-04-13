@@ -17,8 +17,8 @@ import requests
 logging.basicConfig(level=logging.INFO)
 
 # Load credentials/token from environment secrets
-creds_data = os.environ.get("GMAIL_CREDENTIALS")
-token_data = os.environ.get("GMAIL_TOKEN_JSON")
+creds_data = base64.b64decode(os.environ.get("GMAIL_CREDENTIALS", "")).decode("utf-8")
+token_data = base64.b64decode(os.environ.get("GMAIL_TOKEN_JSON", "")).decode("utf-8")
 
 if not creds_data or not token_data:
     logging.error("Missing Gmail API credentials or token in environment.")
