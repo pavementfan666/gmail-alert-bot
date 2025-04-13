@@ -1,3 +1,6 @@
 from telegram_notify import send_telegram_message
 
-send_telegram_message("🚀 Telegram alert test successful!")
+from check_gmail import main as check_gmail_main
+
+if __name__ == "__main__":
+    check_gmail_main()
