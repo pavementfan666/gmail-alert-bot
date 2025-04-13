@@ -22,11 +22,11 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Write credentials_temp.json
-        run: echo "${{ secrets.GMAIL_CREDENTIALS_JSON }}" > credentials_temp.json
+      - name: Write credentials
+        run: echo "${{ secrets.GMAIL_CREDENTIALS_JSON }}" > credentials.json
 
-      - name: Write token_temp.json
-        run: echo "${{ secrets.GMAIL_TOKEN_JSON }}" > token_temp.json
+      - name: Write token
+        run: echo "${{ secrets.GMAIL_TOKEN_JSON }}" > token.json
 
       - name: Run Gmail notifier
         env:
