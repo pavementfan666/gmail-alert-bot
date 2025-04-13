@@ -1,2 +1,4 @@
 __pycache__/
 .env
+token_temp.json
+credentials_temp.json
